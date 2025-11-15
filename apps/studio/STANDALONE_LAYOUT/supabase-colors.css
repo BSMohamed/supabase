@@ -1,0 +1,168 @@
+/**
+ * SUPABASE DASHBOARD COLORS
+ * Exact color variables from Supabase Studio
+ *
+ * Usage: Import this file after Tailwind base/components
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Supabase Color Variables (Dark Theme) */
+:root {
+  /* Background colors */
+  --background-dash-sidebar: 28 31 35; /* Dark sidebar bg: #1c1f23 */
+  --background-studio: 20 23 26; /* Main bg: #14171a */
+  --background-default: 20 23 26;
+  --background-surface-100: 28 31 35;
+  --background-surface-200: 36 40 45;
+  --background-alternative: 36 40 45;
+  --background-selection: 62 207 142 / 0.1; /* Green tint */
+
+  /* Border colors */
+  --border-default: 45 50 56; /* #2d3238 */
+  --border-strong: 55 60 66;
+  --border-stronger: 65 70 76;
+  --border-overlay: 75 80 86;
+
+  /* Text colors */
+  --foreground-default: 237 237 237; /* Almost white */
+  --foreground-light: 177 180 183;
+  --foreground-lighter: 127 130 133;
+  --foreground-muted: 87 90 93;
+
+  /* Brand color (Supabase green) */
+  --brand-default: 62 207 142; /* #3ecf8e */
+  --brand-600: 48 180 123;
+
+  /* Warning/Alert colors */
+  --warning-default: 247 144 9;
+  --warning-600: 234 125 0;
+
+  /* Destructive colors */
+  --destructive-default: 240 82 82;
+  --destructive-600: 220 50 50;
+
+  /* Overlay */
+  --overlay: 0 0 0 / 0.4;
+
+  /* Sidebar specific */
+  --sidebar-background: var(--background-dash-sidebar);
+  --sidebar-foreground: var(--foreground-default);
+  --sidebar-accent: var(--background-selection);
+  --sidebar-border: var(--border-default);
+}
+
+/* Tailwind utility classes for Supabase colors */
+@layer utilities {
+  .bg-dash-sidebar {
+    background-color: rgb(var(--background-dash-sidebar));
+  }
+
+  .bg-studio {
+    background-color: rgb(var(--background-studio));
+  }
+
+  .bg-surface-100 {
+    background-color: rgb(var(--background-surface-100));
+  }
+
+  .bg-surface-200 {
+    background-color: rgb(var(--background-surface-200));
+  }
+
+  .bg-alternative {
+    background-color: rgb(--background-alternative));
+  }
+
+  .bg-selection {
+    background-color: rgba(var(--background-selection));
+  }
+
+  .bg-brand {
+    background-color: rgb(var(--brand-default));
+  }
+
+  .bg-overlay {
+    background-color: rgba(var(--overlay));
+  }
+
+  /* Borders */
+  .border-default {
+    border-color: rgb(var(--border-default));
+  }
+
+  .border-strong {
+    border-color: rgb(var(--border-strong));
+  }
+
+  .border-stronger {
+    border-color: rgb(var(--border-stronger));
+  }
+
+  /* Text colors */
+  .text-foreground {
+    color: rgb(var(--foreground-default));
+  }
+
+  .text-foreground-light {
+    color: rgb(var(--foreground-light));
+  }
+
+  .text-foreground-lighter {
+    color: rgb(var(--foreground-lighter));
+  }
+
+  .text-foreground-muted {
+    color: rgb(var(--foreground-muted));
+  }
+
+  .text-brand {
+    color: rgb(var(--brand-default));
+  }
+
+  .text-background {
+    color: rgb(var(--background-default));
+  }
+}
+
+/* Scrollbar styling (Supabase style) */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Custom scrollbar for visible scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--background-surface-100));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--border-stronger));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--foreground-muted));
+}
+
+/* Smooth font rendering */
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base styles */
+body {
+  @apply bg-studio text-foreground;
+}

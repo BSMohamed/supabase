@@ -1,4 +1,3 @@
-import { Source_Code_Pro } from 'next/font/google'
 import localFont from 'next/font/local'
 
 export const customFont = localFont({
@@ -44,10 +43,10 @@ export const customFont = localFont({
   ],
 })
 
-export const sourceCodePro = Source_Code_Pro({
-  subsets: ['latin'],
-  fallback: ['Source Code Pro', 'Office Code Pro', 'Menlo', 'monospace'],
+// Using local fallback fonts instead of Google Fonts to avoid network dependency
+export const sourceCodePro = {
   variable: '--font-source-code-pro',
-  display: 'swap',
-  weight: ['400', '500', '600', '700'],
-})
+  style: {
+    fontFamily: 'Source Code Pro, Office Code Pro, Menlo, monospace',
+  },
+}
